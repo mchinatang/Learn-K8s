@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: merlink8s-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: merlink8s-rs-simple
+  template:
+    metadata:
+      labels:
+        app: merlink8s-rs-simple
+        release: stable
+        environment: dev
+        tier: frontend
+    spec:
+      containers:
+      - name: merlink8s-rs-container
+        image: ctang1989/simple-nodejs-http-server:1.0.0
