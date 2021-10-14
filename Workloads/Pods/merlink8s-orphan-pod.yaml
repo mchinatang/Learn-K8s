@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: merlink8s-orphan-pod
+spec:
+   containers:
+   - image: ctang1989/liveness-probe:1.0.0
+     name: merlink8s-orphan-pod
+     livenessProbe:
+        httpGet:
+           path: /
+           port: 8090
