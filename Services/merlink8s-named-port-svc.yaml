@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: merlink8s-named-port-svc
+spec:
+  ports:
+  - port: 80
+    targetPort: http
+  selector:
+    app: merlink8s-named-port-rc-simple
