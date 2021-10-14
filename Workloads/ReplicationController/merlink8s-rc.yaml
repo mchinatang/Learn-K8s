@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: merlink8s-rc
+spec:
+  replicas: 3
+  selector:
+    app: merlink8s-simple
+  template:
+    metadata:
+      labels:
+        app: merlink8s-simple
+    spec:
+      containers:
+      - name: merlin-k8s-simple
+        image: ctang1989/simple-nodejs-http-server:1.0.0
+        ports:
+        - containerPort: 8090
