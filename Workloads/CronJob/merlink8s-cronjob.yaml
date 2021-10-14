@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: merlink8s-cronjob
 spec:
-  schedule: "0-59 * * * *"
+  schedule: "*/10 * * * *"
   jobTemplate:
     spec:
       template:
