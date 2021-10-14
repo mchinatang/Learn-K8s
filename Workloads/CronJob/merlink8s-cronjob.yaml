@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: merlink8s-cronjob
+spec:
+  schedule: "0-59 * * * *"
+  jobTemplate:
+    spec:
+      metadata:
+        labels:
+          app: merlink8s-cronjob
+      spec:
+        restartPolicy: OnFailure
+        containers:
+        - name: main
+          image: ctang1989/batch-job:1.0.0
