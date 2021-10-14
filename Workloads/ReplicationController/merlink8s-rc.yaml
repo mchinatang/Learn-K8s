@@ -5,14 +5,14 @@ metadata:
 spec:
   replicas: 3
   selector:
-    app: merlink8s-simple
+    app: merlink8s-rc-simple
   template:
     metadata:
       labels:
-        app: merlink8s-simple
+        app: merlink8s-rc-simple
     spec:
       containers:
-      - name: merlin-k8s-simple
+      - name: merlink8s-rc-container
         image: ctang1989/simple-nodejs-http-server:1.0.0
         ports:
         - containerPort: 8090
