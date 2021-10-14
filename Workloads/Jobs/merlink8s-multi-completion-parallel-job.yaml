@@ -13,4 +13,4 @@ spec:
       restartPolicy: OnFailure
       containers:
       - name: main
-        image: ctang1989/merlin-k8s-batch-job:v0.1.0
+        image: ctang1989/batch-job:1.0.0
