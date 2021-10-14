@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: merlink8s-simple-job
+spec:
+  template:
+    metadata:
+      labels:
+        app: merlink8s-simple-job
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: main
+        image: ctang1989/merlin-k8s-batch-job:v0.1.0

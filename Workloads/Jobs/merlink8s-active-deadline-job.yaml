@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: merlink8s-active-deadline-job
+spec:
+  activeDeadlineSeconds: 30
+  template:
+    metadata:
+      labels:
+        app: merlink8s-active-deadline-job
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: main
+        image: ctang1989/merlin-k8s-batch-job:v0.1.0
